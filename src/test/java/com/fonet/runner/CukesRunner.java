@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/features",
         glue = "com/fonet/step_defs",
-        dryRun = false,
+        dryRun = true,
         plugin = "html:cucumberReport.html",
         publish = false,
         tags = ""

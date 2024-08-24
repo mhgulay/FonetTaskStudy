@@ -25,16 +25,10 @@ public class HomePage {
     @FindBy(css = ".card-block h5")
     public List<WebElement> productPrices;
 
+    @FindBy(id = "cartur")
+    public WebElement cartMenu;
 
-
-    @FindBy(css = ".card-title a")
-    public WebElement productTitle;
-
-
-    @FindBy(css = "itemc")
-    public WebElement productPrice;
-
-
-
+    @FindBy(id = "next2")
+    public WebElement nextButton;
 
 }

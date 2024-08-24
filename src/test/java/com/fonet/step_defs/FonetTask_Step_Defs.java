@@ -1,17 +1,15 @@
 package com.fonet.step_defs;
 
+import com.fonet.pages.CartPage;
 import com.fonet.pages.HomePage;
 import com.fonet.pages.ProductDetailPage;
-import com.fonet.utils.BrowserUtils;
 import com.fonet.utils.ConfigurationReader;
-import com.fonet.utils.Driver;
 import com.github.javafaker.CreditCardType;
 import com.github.javafaker.Faker;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import org.apache.log4j.Logger;
-import org.junit.Assert;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -28,6 +26,7 @@ public class FonetTask_Step_Defs {
 
     HomePage homePage = new HomePage();
     ProductDetailPage productDetailPage = new ProductDetailPage();
+    CartPage cartPage = new CartPage();
 
     String productName, productPrice, testUserFullName;
 
@@ -48,22 +47,17 @@ public class FonetTask_Step_Defs {
         logger.info("Sayfa doğrulandı");
     }
 
-
     @When("Kullanici herhangi bir urun kategorisine tiklar")
     public void kullanici_herhangi_bir_urun_kategorisine_tiklar() {
 
         waitTwoSeconds();
 
-        //List<WebElement> categories = getDriver().findElements(By.id("itemc"));
-
         Random random = new Random();
         int randomIndex = random.nextInt(homePage.categories.size());
-
         homePage.categories.get(randomIndex).click();
 
         String selectedCategory = homePage.categories.get(randomIndex).getText();
         logger.info("Seçilen kategori: " + selectedCategory);
-
     }
 
     @When("Kullanici herhangi bir urun kartina tiklar")
@@ -102,7 +96,7 @@ public class FonetTask_Step_Defs {
 
     @When("Kullanici Cart menusune tiklar")
     public void kullaniciCartMenusuneTiklar() {
-        getDriver().findElement(By.id("cartur")).click();
+        homePage.cartMenu.click();
         logger.info("Sepet görüntülendi");
     }
 
@@ -110,9 +104,7 @@ public class FonetTask_Step_Defs {
     public void kullanici_urun_adini_ve_fiyatini_kontrol_eder() {
         waitTwoSeconds();
 
-        WebElement table = getDriver().findElement(By.cssSelector(".table-striped"));
-
-        List<WebElement> rows = table.findElements(By.tagName("tr"));
+        List<WebElement> rows = cartPage.cartTable.findElements(By.tagName("tr"));
 
         for (WebElement row : rows) {
             List<WebElement> cells = row.findElements(By.tagName("td"));
@@ -132,7 +124,7 @@ public class FonetTask_Step_Defs {
     public void kullanici_bilgi_pop_up_ta_adini_ve_fiyati_kontrol_eder() {
         waitTwoSeconds();
 
-        String infoText = getDriver().findElement(By.cssSelector(".text-muted")).getText();
+        String infoText = cartPage.infoText.getText();
 
         String prefix = "Name: ";
         int startIndex = infoText.indexOf(prefix) + prefix.length();
@@ -146,7 +138,6 @@ public class FonetTask_Step_Defs {
         endIndex = infoText.indexOf("\n", startIndex);
 
         String Amount = infoText.substring(startIndex, endIndex).trim();
-
         assertTrue(Amount.startsWith(productPrice.replace("$", "")));
 
         logger.info("Ödeme yapıldı ve bilgiler kontrol edildi");
@@ -154,24 +145,20 @@ public class FonetTask_Step_Defs {
 
     @When("Kullanici {string} butonuna tiklar")
     public void kullanici_butonuna_tiklar(String buttonText) {
-        getDriver().findElement(By.xpath("//button[text()='" + buttonText + "']")).click();
+        clickButtonByText(buttonText);
         logger.info(buttonText + " butonuna tıklandı");
     }
 
-
     @And("Kullanici Add to cart butonuna tiklar")
     public void kullaniciAddToCartButonunaTiklar() {
-        getDriver().findElement(By.xpath("//a[text()=\"Add to cart\"]")).click();
+        productDetailPage.addToCart.click();
         logger.info("Add to cart butonuna tıklandı");
     }
 
     @And("Kullanici urun toplam fiyatini kontrol eder")
     public void kullaniciUrunToplamFiyatiniKontrolEder() {
-
-        String selectedProductTotalPrice = getDriver().findElement(By.id("totalp")).getText();
-
+        String selectedProductTotalPrice = cartPage.totalPrice.getText();
         assertTrue(productPrice.endsWith(selectedProductTotalPrice));
-
         logger.info("Sepet toplamı kontrol edildi");
     }
 
@@ -208,16 +195,14 @@ public class FonetTask_Step_Defs {
 
         waitTwoSeconds();
 
-        String selectedProductTotalPrice = getDriver().findElement(By.id("totalm")).getText().replace("Total: ", "");
-
+        String selectedProductTotalPrice = cartPage.totalPricePlaceOrder.getText().replace("Total: ", "");
         assertTrue(productPrice.endsWith(selectedProductTotalPrice));
-
         logger.info("Sipariş formundaki fiyat kontrol edildi");
     }
 
     @And("Kullanici bilgi pop-up ta {string} mesajini görür")
     public void kullaniciBilgiPopUpTaMesajiniGörür(String msgText) {
-        String infoText = getDriver().findElement(By.xpath("//div[10]/h2")).getText();
+        String infoText = cartPage.msgText.getText();
         assertEquals(msgText, infoText);
         logger.info("Sipariş tamamlandı");
     }

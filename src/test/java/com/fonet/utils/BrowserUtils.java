@@ -1,5 +1,6 @@
 package com.fonet.utils;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -21,7 +22,16 @@ public class BrowserUtils {
 
     public static void clickWithJS(WebElement element) {
        // ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
-        // waitTwoSeconds();
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();", element);
+    }
+
+    public static void clickButtonByText(String buttonText) {
+        WebElement button = Driver.getDriver().findElement(By.xpath("//button[text()='" + buttonText + "']"));
+        button.click();
+    }
+
+    public static void clickLinkByText(String linkText) {
+        WebElement aTag = Driver.getDriver().findElement(By.xpath("//a[text()='" + linkText + "']"));
+        aTag.click();
     }
 }

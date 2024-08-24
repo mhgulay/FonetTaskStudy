@@ -1,8 +1,17 @@
 Feature: Fonet Test Automation WebUI Task
 
-  Scenario: Urun satin alma E2E süreci
+  Background: Kullanici siteyi acar
     Given Kullanici demoblaze.com sitesini acar
     When Kullanici site basligini "STORE" kontrol eder
+
+  Scenario: Toplam urun adet kontrolu
+    And Listelenen urunler loglanir
+    And Phones kategorisi loglanir
+    And Laptops kategorisi loglanir
+    And Monitors kategorisi loglanir
+    Then Toplam sayi kontrol edilir
+
+  Scenario: Urun satin alma E2E süreci
     And Kullanici herhangi bir urun kategorisine tiklar
     And Kullanici herhangi bir urun kartina tiklar
     And Kullanici acilan urun adini ve fiyat bilgisini kontrol eder

@@ -19,4 +19,7 @@ public class ProductDetailPage {
 
     @FindBy(css = ".product-deatil h3")
     public WebElement productPrice;
+
+    @FindBy(xpath = "//a[text()=\"Add to cart\"]")
+    public WebElement addToCart;
 }
