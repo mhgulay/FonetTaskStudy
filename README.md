@@ -1,1 +1,1 @@
-demoblaze.com categories product control and E2E purchase testing
+demoblaze.com control of products in the categories and E2E purchasing test
