@@ -1,44 +1,67 @@
-2024-08-24 03:48:00 INFO  FonetTask_Step_Defs:40 - demoblaze.com sitesi açıldı
-2024-08-24 03:48:00 INFO  FonetTask_Step_Defs:47 - Sayfa doğrulandı
-2024-08-24 03:48:15 INFO  FonetTask_Step_Defs:43 - Son sayfa ulaşıldı, daha fazla ürün yok.
-2024-08-24 03:48:28 INFO  FonetTask_Step_Defs:64 - Son sayfa ulaşıldı, daha fazla ürün yok.
-2024-08-24 03:48:41 INFO  FonetTask_Step_Defs:85 - Son sayfa ulaşıldı, daha fazla ürün yok.
-2024-08-24 03:48:53 INFO  FonetTask_Step_Defs:106 - Son sayfa ulaşıldı, daha fazla ürün yok.
-2024-08-24 03:48:53 INFO  FonetTask_Step_Defs:115 - Toplam ürün adeti: 15
-2024-08-24 03:48:53 INFO  FonetTask_Step_Defs:116 - Phones ürün adeti: 7
-2024-08-24 03:48:53 INFO  FonetTask_Step_Defs:117 - Laptops ürün adeti: 6
-2024-08-24 03:48:53 INFO  FonetTask_Step_Defs:118 - Monitors ürün adeti: 2
-2024-08-24 03:48:53 INFO  FonetTask_Step_Defs:120 - All Products
-2024-08-24 03:48:53 INFO  FonetTask_Step_Defs:122 - Ürün Adı: Samsung galaxy s6    | Fiyat: $360
-2024-08-24 03:48:53 INFO  FonetTask_Step_Defs:122 - Ürün Adı: Nokia lumia 1520     | Fiyat: $820
-2024-08-24 03:48:53 INFO  FonetTask_Step_Defs:122 - Ürün Adı: Nexus 6              | Fiyat: $650
-2024-08-24 03:48:53 INFO  FonetTask_Step_Defs:122 - Ürün Adı: Samsung galaxy s7    | Fiyat: $800
-2024-08-24 03:48:53 INFO  FonetTask_Step_Defs:122 - Ürün Adı: Iphone 6 32gb        | Fiyat: $790
-2024-08-24 03:48:53 INFO  FonetTask_Step_Defs:122 - Ürün Adı: Sony xperia z5       | Fiyat: $320
-2024-08-24 03:48:53 INFO  FonetTask_Step_Defs:122 - Ürün Adı: HTC One M9           | Fiyat: $700
-2024-08-24 03:48:53 INFO  FonetTask_Step_Defs:122 - Ürün Adı: Sony vaio i5         | Fiyat: $790
-2024-08-24 03:48:53 INFO  FonetTask_Step_Defs:122 - Ürün Adı: Sony vaio i7         | Fiyat: $790
-2024-08-24 03:48:53 INFO  FonetTask_Step_Defs:122 - Ürün Adı: Apple monitor 24     | Fiyat: $400
-2024-08-24 03:48:53 INFO  FonetTask_Step_Defs:122 - Ürün Adı: MacBook air          | Fiyat: $700
-2024-08-24 03:48:53 INFO  FonetTask_Step_Defs:122 - Ürün Adı: Dell i7 8gb          | Fiyat: $700
-2024-08-24 03:48:53 INFO  FonetTask_Step_Defs:122 - Ürün Adı: 2017 Dell 15.6 Inch  | Fiyat: $700
-2024-08-24 03:48:53 INFO  FonetTask_Step_Defs:122 - Ürün Adı: ASUS Full HD         | Fiyat: $230
-2024-08-24 03:48:53 INFO  FonetTask_Step_Defs:122 - Ürün Adı: MacBook Pro          | Fiyat: $1100
-2024-08-24 03:48:53 INFO  FonetTask_Step_Defs:124 - Phones
-2024-08-24 03:48:53 INFO  FonetTask_Step_Defs:126 - Ürün Adı: Samsung galaxy s6    | Fiyat: $360
-2024-08-24 03:48:53 INFO  FonetTask_Step_Defs:126 - Ürün Adı: Nokia lumia 1520     | Fiyat: $820
-2024-08-24 03:48:53 INFO  FonetTask_Step_Defs:126 - Ürün Adı: Nexus 6              | Fiyat: $650
-2024-08-24 03:48:53 INFO  FonetTask_Step_Defs:126 - Ürün Adı: Samsung galaxy s7    | Fiyat: $800
-2024-08-24 03:48:53 INFO  FonetTask_Step_Defs:126 - Ürün Adı: Iphone 6 32gb        | Fiyat: $790
-2024-08-24 03:48:53 INFO  FonetTask_Step_Defs:126 - Ürün Adı: Sony xperia z5       | Fiyat: $320
-2024-08-24 03:48:53 INFO  FonetTask_Step_Defs:126 - Ürün Adı: HTC One M9           | Fiyat: $700
-2024-08-24 03:48:53 INFO  FonetTask_Step_Defs:128 - Laptops
-2024-08-24 03:48:53 INFO  FonetTask_Step_Defs:130 - Ürün Adı: Sony vaio i5         | Fiyat: $790
-2024-08-24 03:48:53 INFO  FonetTask_Step_Defs:130 - Ürün Adı: Sony vaio i7         | Fiyat: $790
-2024-08-24 03:48:53 INFO  FonetTask_Step_Defs:130 - Ürün Adı: MacBook air          | Fiyat: $700
-2024-08-24 03:48:53 INFO  FonetTask_Step_Defs:130 - Ürün Adı: Dell i7 8gb          | Fiyat: $700
-2024-08-24 03:48:53 INFO  FonetTask_Step_Defs:130 - Ürün Adı: 2017 Dell 15.6 Inch  | Fiyat: $700
-2024-08-24 03:48:53 INFO  FonetTask_Step_Defs:130 - Ürün Adı: MacBook Pro          | Fiyat: $1100
-2024-08-24 03:48:53 INFO  FonetTask_Step_Defs:132 - Monitors
-2024-08-24 03:48:53 INFO  FonetTask_Step_Defs:134 - Ürün Adı: Apple monitor 24     | Fiyat: $400
-2024-08-24 03:48:53 INFO  FonetTask_Step_Defs:134 - Ürün Adı: ASUS Full HD         | Fiyat: $230
+2024-08-24 15:31:30 INFO  FonetTask_Step_Defs:41 - demoblaze.com site opened
+2024-08-24 15:31:30 INFO  FonetTask_Step_Defs:48 - Page title verified
+2024-08-24 15:31:46 INFO  FonetTask_Step_Defs:38 - All products fetched
+2024-08-24 15:31:59 INFO  FonetTask_Step_Defs:59 - Phones category fetched.
+2024-08-24 15:32:11 INFO  FonetTask_Step_Defs:80 - Laptops category fetched.
+2024-08-24 15:32:24 INFO  FonetTask_Step_Defs:101 - Monitors category fetched
+2024-08-24 15:32:24 INFO  FonetTask_Step_Defs:109 - Total product quantity: 15
+2024-08-24 15:32:24 INFO  FonetTask_Step_Defs:110 - Quantity of Phones: 7
+2024-08-24 15:32:24 INFO  FonetTask_Step_Defs:111 - Quantity of Laptops: 6
+2024-08-24 15:32:24 INFO  FonetTask_Step_Defs:112 - Quantity of Monitors: 2
+2024-08-24 15:32:24 INFO  FonetTask_Step_Defs:114 - All Products
+2024-08-24 15:32:24 INFO  FonetTask_Step_Defs:116 - Product Name: Samsung galaxy s6    | Price: $360
+2024-08-24 15:32:24 INFO  FonetTask_Step_Defs:116 - Product Name: Nokia lumia 1520     | Price: $820
+2024-08-24 15:32:24 INFO  FonetTask_Step_Defs:116 - Product Name: Nexus 6              | Price: $650
+2024-08-24 15:32:24 INFO  FonetTask_Step_Defs:116 - Product Name: Samsung galaxy s7    | Price: $800
+2024-08-24 15:32:24 INFO  FonetTask_Step_Defs:116 - Product Name: Iphone 6 32gb        | Price: $790
+2024-08-24 15:32:24 INFO  FonetTask_Step_Defs:116 - Product Name: Sony xperia z5       | Price: $320
+2024-08-24 15:32:24 INFO  FonetTask_Step_Defs:116 - Product Name: HTC One M9           | Price: $700
+2024-08-24 15:32:24 INFO  FonetTask_Step_Defs:116 - Product Name: Sony vaio i5         | Price: $790
+2024-08-24 15:32:24 INFO  FonetTask_Step_Defs:116 - Product Name: Sony vaio i7         | Price: $790
+2024-08-24 15:32:24 INFO  FonetTask_Step_Defs:116 - Product Name: Apple monitor 24     | Price: $400
+2024-08-24 15:32:24 INFO  FonetTask_Step_Defs:116 - Product Name: MacBook air          | Price: $700
+2024-08-24 15:32:24 INFO  FonetTask_Step_Defs:116 - Product Name: Dell i7 8gb          | Price: $700
+2024-08-24 15:32:24 INFO  FonetTask_Step_Defs:116 - Product Name: 2017 Dell 15.6 Inch  | Price: $700
+2024-08-24 15:32:24 INFO  FonetTask_Step_Defs:116 - Product Name: ASUS Full HD         | Price: $230
+2024-08-24 15:32:24 INFO  FonetTask_Step_Defs:116 - Product Name: MacBook Pro          | Price: $1100
+2024-08-24 15:32:24 INFO  FonetTask_Step_Defs:118 - Phones
+2024-08-24 15:32:24 INFO  FonetTask_Step_Defs:120 - Product Name: Samsung galaxy s6    | Price: $360
+2024-08-24 15:32:24 INFO  FonetTask_Step_Defs:120 - Product Name: Nokia lumia 1520     | Price: $820
+2024-08-24 15:32:24 INFO  FonetTask_Step_Defs:120 - Product Name: Nexus 6              | Price: $650
+2024-08-24 15:32:24 INFO  FonetTask_Step_Defs:120 - Product Name: Samsung galaxy s7    | Price: $800
+2024-08-24 15:32:24 INFO  FonetTask_Step_Defs:120 - Product Name: Iphone 6 32gb        | Price: $790
+2024-08-24 15:32:24 INFO  FonetTask_Step_Defs:120 - Product Name: Sony xperia z5       | Price: $320
+2024-08-24 15:32:24 INFO  FonetTask_Step_Defs:120 - Product Name: HTC One M9           | Price: $700
+2024-08-24 15:32:24 INFO  FonetTask_Step_Defs:122 - Laptops
+2024-08-24 15:32:24 INFO  FonetTask_Step_Defs:124 - Product Name: Sony vaio i5         | Price: $790
+2024-08-24 15:32:24 INFO  FonetTask_Step_Defs:124 - Product Name: Sony vaio i7         | Price: $790
+2024-08-24 15:32:24 INFO  FonetTask_Step_Defs:124 - Product Name: MacBook air          | Price: $700
+2024-08-24 15:32:24 INFO  FonetTask_Step_Defs:124 - Product Name: Dell i7 8gb          | Price: $700
+2024-08-24 15:32:24 INFO  FonetTask_Step_Defs:124 - Product Name: 2017 Dell 15.6 Inch  | Price: $700
+2024-08-24 15:32:24 INFO  FonetTask_Step_Defs:124 - Product Name: MacBook Pro          | Price: $1100
+2024-08-24 15:32:24 INFO  FonetTask_Step_Defs:126 - Monitors
+2024-08-24 15:32:24 INFO  FonetTask_Step_Defs:128 - Product Name: Apple monitor 24     | Price: $400
+2024-08-24 15:32:24 INFO  FonetTask_Step_Defs:128 - Product Name: ASUS Full HD         | Price: $230
+2024-08-24 15:32:29 INFO  FonetTask_Step_Defs:41 - demoblaze.com site opened
+2024-08-24 15:32:29 INFO  FonetTask_Step_Defs:48 - Page title verified
+2024-08-24 15:32:31 INFO  FonetTask_Step_Defs:60 - Selected category: Laptops
+2024-08-24 15:32:33 INFO  FonetTask_Step_Defs:72 - Selected product: Sony vaio i5
+2024-08-24 15:32:33 INFO  FonetTask_Step_Defs:73 - Selected product price: $790
+2024-08-24 15:32:35 INFO  FonetTask_Step_Defs:85 - Product name and price verified in the product detail page
+2024-08-24 15:32:35 INFO  FonetTask_Step_Defs:91 - Clicked the Add to cart button
+2024-08-24 15:32:37 INFO  FonetTask_Step_Defs:105 - Product added to cart
+2024-08-24 15:32:38 INFO  FonetTask_Step_Defs:111 - Cart menu viewed
+2024-08-24 15:32:50 INFO  FonetTask_Step_Defs:130 - Product name and price verified on the cart menu
+2024-08-24 15:32:50 INFO  FonetTask_Step_Defs:137 - Cart menu total price verified
+2024-08-24 15:32:50 INFO  FonetTask_Step_Defs:97 - Clicked the Place Order button
+2024-08-24 15:32:52 INFO  FonetTask_Step_Defs:145 - Price in the Place Order form verified
+2024-08-24 15:32:55 INFO  FonetTask_Step_Defs:173 - name information added to the purchase form
+2024-08-24 15:32:57 INFO  FonetTask_Step_Defs:173 - country information added to the purchase form
+2024-08-24 15:32:59 INFO  FonetTask_Step_Defs:173 - city information added to the purchase form
+2024-08-24 15:33:01 INFO  FonetTask_Step_Defs:173 - card information added to the purchase form
+2024-08-24 15:33:03 INFO  FonetTask_Step_Defs:173 - month information added to the purchase form
+2024-08-24 15:33:06 INFO  FonetTask_Step_Defs:173 - year information added to the purchase form
+2024-08-24 15:33:06 INFO  FonetTask_Step_Defs:97 - Clicked the Purchase button
+2024-08-24 15:33:08 INFO  FonetTask_Step_Defs:196 - Payment made and details verified
+2024-08-24 15:33:08 INFO  FonetTask_Step_Defs:203 - Order completed
+2024-08-24 15:33:09 INFO  FonetTask_Step_Defs:97 - Clicked the OK button

@@ -34,22 +34,22 @@ public class FonetTask_Step_Defs {
 
     Faker faker = new Faker();
 
-    @Given("Kullanici demoblaze.com sitesini acar")
-    public void kullanici_demoblaze_com_sitesini_acar() {
+
+    @Given("The user opens the demoblaze.com site")
+    public void theUserOpensTheDemoblazeComSite() {
         getDriver().get(ConfigurationReader.getProperty("url"));
-        logger.info("demoblaze.com sitesi açıldı");
+        logger.info("demoblaze.com site opened");
     }
 
-    @When("Kullanici site basligini {string} kontrol eder")
-    public void kullaniciSiteBasliginiKontrolEder(String siteTitle) {
+    @When("The user checks the site title is {string}")
+    public void theUserChecksTheSiteTitleIs(String siteTitle) {
         String actualTitle = getDriver().getTitle();
         assertEquals(siteTitle, actualTitle);
-        logger.info("Sayfa doğrulandı");
+        logger.info("Page title verified");
     }
 
-    @When("Kullanici herhangi bir urun kategorisine tiklar")
-    public void kullanici_herhangi_bir_urun_kategorisine_tiklar() {
-
+    @And("User clicks on any product category")
+    public void userClicksOnAnyProductCategory() {
         waitTwoSeconds();
 
         Random random = new Random();
@@ -57,11 +57,11 @@ public class FonetTask_Step_Defs {
         homePage.categories.get(randomIndex).click();
 
         String selectedCategory = homePage.categories.get(randomIndex).getText();
-        logger.info("Seçilen kategori: " + selectedCategory);
+        logger.info("Selected category: " + selectedCategory);
     }
 
-    @When("Kullanici herhangi bir urun kartina tiklar")
-    public void kullanici_herhangi_bir_urun_kartina_tiklar() throws InterruptedException {
+    @And("User clicks on any product card")
+    public void userClicksOnAnyProductCard() {
         waitTwoSeconds();
 
         Random random = new Random();
@@ -69,39 +69,50 @@ public class FonetTask_Step_Defs {
 
         this.productName = homePage.productNames.get(randomProductIndex).getText();
         this.productPrice = homePage.productPrices.get(randomProductIndex).getText();
-        logger.info("Seçilen ürün: " + productName);
-        logger.info("Seçilen ürün fiyatı: " + productPrice);
+        logger.info("Selected product: " + productName);
+        logger.info("Selected product price: " + productPrice);
         homePage.productNames.get(randomProductIndex).click();
     }
 
-    @When("Kullanici acilan urun adini ve fiyat bilgisini kontrol eder")
-    public void kullanici_acilan_urun_adini_ve_fiyat_bilgisini_kontrol_eder() {
-
+    @And("User verifies the product name and price in the product detail page")
+    public void userVerifiesTheProductNameAndPriceInTheProductDetailPage() {
         String selectedProductName = productDetailPage.productTitle.getText();
         String selectedProductPrice = productDetailPage.productPrice.getText();
 
         assertEquals(productName, selectedProductName);
         assertTrue(selectedProductPrice.startsWith(productPrice));
 
-        logger.info("Ürün adı ve fiyatı doğrulandı");
+        logger.info("Product name and price verified in the product detail page");
     }
 
-    @And("Kullanici urun eklendi bilgi pop-up onaylar")
-    public void kullaniciUrunEklendiBilgiPopUpOnaylar() {
+    @And("User clicks the Add to cart button")
+    public void userClicksTheAddToCartButton() {
+        productDetailPage.addToCart.click();
+        logger.info("Clicked the Add to cart button");
+    }
+
+    @And("User clicks the {string} button")
+    public void userClicksTheButton(String buttonText) {
+        clickButtonByText(buttonText);
+        logger.info("Clicked the " + buttonText + " button");
+    }
+
+    @And("User confirms the product added pop-up message")
+    public void userConfirmsTheProductAddedPopUpMessage() {
         waitTwoSeconds();
         Alert alert = getDriver().switchTo().alert();
         alert.accept();
-        logger.info("Ürün sepete eklendi");
+        logger.info("Product added to cart");
     }
 
-    @When("Kullanici Cart menusune tiklar")
-    public void kullaniciCartMenusuneTiklar() {
+    @And("User clicks on the Cart menu")
+    public void userClicksOnTheCartMenu() {
         homePage.cartMenu.click();
-        logger.info("Sepet görüntülendi");
+        logger.info("Cart menu viewed");
     }
 
-    @When("Kullanici urun adini ve fiyatini kontrol eder")
-    public void kullanici_urun_adini_ve_fiyatini_kontrol_eder() {
+    @And("User verifies the product name and price on the cart menu")
+    public void userVerifiesTheProductNameAndPriceOnTheCartMenu() {
         waitTwoSeconds();
 
         List<WebElement> rows = cartPage.cartTable.findElements(By.tagName("tr"));
@@ -112,58 +123,30 @@ public class FonetTask_Step_Defs {
 
                 String addedProductName = cells.get(1).getText();
                 String addedProductPrice = cells.get(2).getText();
-
                 assertEquals(productName, addedProductName);
                 assertTrue(productPrice.endsWith(addedProductPrice));
             }
         }
-        logger.info("Sepetteki ürün adı ve fiyatı doğrulandı");
+        logger.info("Product name and price verified on the cart menu");
     }
 
-    @When("Kullanici bilgi pop-up ta adini ve fiyati kontrol eder")
-    public void kullanici_bilgi_pop_up_ta_adini_ve_fiyati_kontrol_eder() {
-        waitTwoSeconds();
-
-        String infoText = cartPage.infoText.getText();
-
-        String prefix = "Name: ";
-        int startIndex = infoText.indexOf(prefix) + prefix.length();
-        int endIndex = infoText.indexOf("\n", startIndex);
-
-        String Name = infoText.substring(startIndex, endIndex).trim();
-        assertEquals(testUserFullName, Name);
-
-        prefix = "Amount: ";
-        startIndex = infoText.indexOf(prefix) + prefix.length();
-        endIndex = infoText.indexOf("\n", startIndex);
-
-        String Amount = infoText.substring(startIndex, endIndex).trim();
-        assertTrue(Amount.startsWith(productPrice.replace("$", "")));
-
-        logger.info("Ödeme yapıldı ve bilgiler kontrol edildi");
-    }
-
-    @When("Kullanici {string} butonuna tiklar")
-    public void kullanici_butonuna_tiklar(String buttonText) {
-        clickButtonByText(buttonText);
-        logger.info(buttonText + " butonuna tıklandı");
-    }
-
-    @And("Kullanici Add to cart butonuna tiklar")
-    public void kullaniciAddToCartButonunaTiklar() {
-        productDetailPage.addToCart.click();
-        logger.info("Add to cart butonuna tıklandı");
-    }
-
-    @And("Kullanici urun toplam fiyatini kontrol eder")
-    public void kullaniciUrunToplamFiyatiniKontrolEder() {
+    @And("User verifies the total product price on the cart menu")
+    public void userVerifiesTheTotalProductPriceOnTheCartMenu() {
         String selectedProductTotalPrice = cartPage.totalPrice.getText();
         assertTrue(productPrice.endsWith(selectedProductTotalPrice));
-        logger.info("Sepet toplamı kontrol edildi");
+        logger.info("Cart menu total price verified");
     }
 
-    @And("Kullanici Place Order formunda {string} alanini doldurur")
-    public void kullaniciPlaceOrderFormundaAlaniniDoldurur(String labelText) {
+    @And("User verifies the price in the Place Order form")
+    public void userVerifiesThePriceInThePlaceOrderForm() {
+        waitTwoSeconds();
+        String selectedProductTotalPrice = cartPage.totalPricePlaceOrder.getText().replace("Total: ", "");
+        assertTrue(productPrice.endsWith(selectedProductTotalPrice));
+        logger.info("Price in the Place Order form verified");
+    }
+
+    @And("User fills in the {string} field in the Place Order form")
+    public void userFillsInTheFieldInThePlaceOrderForm(String labelText) {
         WebElement inputBox = getDriver().findElement(By.id(labelText));
         waitTwoSeconds();
         switch (labelText) {
@@ -187,24 +170,37 @@ public class FonetTask_Step_Defs {
                 inputBox.sendKeys("2032");
                 break;
         }
-        logger.info(labelText + " bilgisi forma eklendi");
+        logger.info(labelText + " information added to the purchase form");
     }
 
-    @And("Kullanici Place Order formunda fiyati kontrol eder")
-    public void kullaniciPlaceOrderFormundaFiyatiKontrolEder() {
-
+    @And("User verifies the name and the price in the confirmation pop-up")
+    public void userVerifiesTheNameAndThePriceInTheConfirmationPopUp() {
         waitTwoSeconds();
 
-        String selectedProductTotalPrice = cartPage.totalPricePlaceOrder.getText().replace("Total: ", "");
-        assertTrue(productPrice.endsWith(selectedProductTotalPrice));
-        logger.info("Sipariş formundaki fiyat kontrol edildi");
+        String infoText = cartPage.infoText.getText();
+
+        String prefix = "Name: ";
+        int startIndex = infoText.indexOf(prefix) + prefix.length();
+        int endIndex = infoText.indexOf("\n", startIndex);
+
+        String Name = infoText.substring(startIndex, endIndex).trim();
+        assertEquals(testUserFullName, Name);
+
+        prefix = "Amount: ";
+        startIndex = infoText.indexOf(prefix) + prefix.length();
+        endIndex = infoText.indexOf("\n", startIndex);
+
+        String Amount = infoText.substring(startIndex, endIndex).trim();
+        assertTrue(Amount.startsWith(productPrice.replace("$", "")));
+
+        logger.info("Payment made and details verified");
     }
 
-    @And("Kullanici bilgi pop-up ta {string} mesajini görür")
-    public void kullaniciBilgiPopUpTaMesajiniGörür(String msgText) {
+    @And("User sees the {string} message in the confirmation pop-up")
+    public void userSeesTheMessageInTheConfirmationPopUp(String msgText) {
         String infoText = cartPage.msgText.getText();
         assertEquals(msgText, infoText);
-        logger.info("Sipariş tamamlandı");
+        logger.info("Order completed");
     }
-}
 
+}

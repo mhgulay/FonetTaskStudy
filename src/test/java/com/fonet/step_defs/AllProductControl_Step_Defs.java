@@ -3,17 +3,12 @@ package com.fonet.step_defs;
 import com.fonet.pages.HomePage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
 import org.apache.log4j.Logger;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import static com.fonet.utils.BrowserUtils.*;
-import static com.fonet.utils.Driver.getDriver;
 
 public class AllProductControl_Step_Defs {
 
@@ -26,8 +21,8 @@ public class AllProductControl_Step_Defs {
     List<String[]> laptops = new ArrayList<>();
     List<String[]> monitors = new ArrayList<>();
 
-    @When("Listelenen urunler loglanir")
-    public void listelenen_urunler_loglanir() {
+    @And("All listed products are fetched")
+    public void allListedProductsAreFetched() {
         waitTwoSeconds();
         while (true) {
             for (int i = 0; i < homePage.productNames.size(); i++) {
@@ -40,14 +35,14 @@ public class AllProductControl_Step_Defs {
                 homePage.nextButton.click();
                 waitTwoSeconds();
             } catch (Exception e) {
-                logger.info("Son sayfa ulaşıldı, daha fazla ürün yok.");
+                logger.info("All products fetched");
                 break;
             }
         }
     }
 
-    @And("Phones kategorisi loglanir")
-    public void phonesKategorisiLoglanir() {
+    @And("Products in the Phones category are fetched")
+    public void productsInThePhonesCategoryAreFetched() {
         clickLinkByText("Phones");
         waitTwoSeconds();
         while (true) {
@@ -61,14 +56,14 @@ public class AllProductControl_Step_Defs {
                 homePage.nextButton.click();
                 waitTwoSeconds();
             } catch (Exception e) {
-                logger.info("Son sayfa ulaşıldı, daha fazla ürün yok.");
+                logger.info("Phones category fetched.");
                 break;
             }
         }
     }
 
-    @And("Laptops kategorisi loglanir")
-    public void laptopsKategorisiLoglanir() {
+    @And("Products in the Laptops category are fetched")
+    public void productsInTheLaptopsCategoryAreFetched() {
         clickLinkByText("Laptops");
         waitTwoSeconds();
         while (true) {
@@ -82,14 +77,14 @@ public class AllProductControl_Step_Defs {
                 homePage.nextButton.click();
                 waitTwoSeconds();
             } catch (Exception e) {
-                logger.info("Son sayfa ulaşıldı, daha fazla ürün yok.");
+                logger.info("Laptops category fetched.");
                 break;
             }
         }
     }
 
-    @And("Monitors kategorisi loglanir")
-    public void monitorsKategorisiLoglanir() {
+    @And("Products in the Monitors category are fetched")
+    public void productsInTheMonitorsCategoryAreFetched() {
         clickLinkByText("Monitors");
         waitTwoSeconds();
         while (true) {
@@ -103,36 +98,36 @@ public class AllProductControl_Step_Defs {
                 homePage.nextButton.click();
                 waitTwoSeconds();
             } catch (Exception e) {
-                logger.info("Son sayfa ulaşıldı, daha fazla ürün yok.");
+                logger.info("Monitors category fetched");
                 break;
             }
         }
     }
 
-    @Then("Toplam sayi kontrol edilir")
-    public void toplam_sayi_kontrol_edilir() {
-
-        logger.info("Toplam ürün adeti: " + allProducts.size());
-        logger.info("Phones ürün adeti: " + phones.size());
-        logger.info("Laptops ürün adeti: " + laptops.size());
-        logger.info("Monitors ürün adeti: " + monitors.size());
+    @Then("Product details and quantities are logged")
+    public void productDetailsAndQuantitiesAreLogged() {
+        logger.info("Total product quantity: " + allProducts.size());
+        logger.info("Quantity of Phones: " + phones.size());
+        logger.info("Quantity of Laptops: " + laptops.size());
+        logger.info("Quantity of Monitors: " + monitors.size());
 
         logger.info("All Products");
         for (String[] product : allProducts) {
-            logger.info(String.format("Ürün Adı: %-20s | Fiyat: %s", product[0], product[1]));
+            logger.info(String.format("Product Name: %-20s | Price: %s", product[0], product[1]));
         }
         logger.info("Phones");
         for (String[] product : phones) {
-            logger.info(String.format("Ürün Adı: %-20s | Fiyat: %s", product[0], product[1]));
+            logger.info(String.format("Product Name: %-20s | Price: %s", product[0], product[1]));
         }
         logger.info("Laptops");
         for (String[] product : laptops) {
-            logger.info(String.format("Ürün Adı: %-20s | Fiyat: %s", product[0], product[1]));
+            logger.info(String.format("Product Name: %-20s | Price: %s", product[0], product[1]));
         }
         logger.info("Monitors");
         for (String[] product : monitors) {
-            logger.info(String.format("Ürün Adı: %-20s | Fiyat: %s", product[0], product[1]));
+            logger.info(String.format("Product Name: %-20s | Price: %s", product[0], product[1]));
         }
+
     }
 }
 
